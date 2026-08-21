@@ -7,9 +7,9 @@ if [ -z "$DOMAIN" ]; then
     exit 1
 fi
 
-CPUSER="YOUR_CP_USERNAME"
-CPTOKEN="YOUR_API_TOKEN"
-HOST="https://cpanel.examplehost.com:2083"
+CPUSER="${CPANEL_USER:?CPANEL_USER is not set}"
+CPTOKEN="${CPANEL_API_TOKEN:?CPANEL_API_TOKEN is not set}"
+HOST="${CPANEL_HOST:?CPANEL_HOST is not set}"
 
 CERT="/acme.sh/${DOMAIN}_ecc/${DOMAIN}.cer"
 KEY="/acme.sh/${DOMAIN}_ecc/${DOMAIN}.key"
